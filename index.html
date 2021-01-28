@@ -3,75 +3,13 @@
 <html>
 
 <body>
-    <script>
+    <div id="container">
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <button id="rock">Rock</button>
+    </div>
 
-        const VALID = ["rock", "paper", "scissors"];
-        let wins = 0;
-        let losses = 0;
-        let draws = 0;
-        const GAMES = 5;
-
-
-        function playRound(playerSelection) {
-
-            const computerSelection = VALID[Math.floor(Math.random() * 3)];
-
-            console.log("Player: " + playerSelection + " Computer: " + computerSelection)
-
-            if (playerSelection == computerSelection) {
-                return draws += 1;
-
-            } else if (playerSelection == "rock") {
-                if (computerSelection == "paper") {
-                    return losses += 1;
-                } else {
-                    return wins += 1;
-                }
-            } else if (playerSelection == "paper") {
-                if (computerSelection == "scissors") {
-                    return losses += 1;
-                } else {
-                    return wins += 1;
-                }
-            } else {
-                if (computerSelection == "rock") {
-                    return losses += 1;
-
-                } else {
-                    return wins += 1;
-                }
-
-            }
-
-
-        }
-
-
-        const inGame = true;
-
-        while (inGame) {
-
-            if ((wins + losses + draws) == GAMES) {
-                console.log(GAMES + " games played. Game over!")
-                break;
-            }
-
-            const playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
-
-            if (VALID.includes(playerSelection)) {
-                playRound(playerSelection)
-                console.log("Wins:" + wins + " ... Losses: " + losses + " ... Draws:" + draws + " --- Total: " + (wins + losses + draws))
-            } else {
-                console.log("Invalid word, try again.");
-
-            }
-
-
-        }
-
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
