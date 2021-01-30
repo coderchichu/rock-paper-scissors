@@ -94,9 +94,11 @@ btn.forEach((button) => {
 
     button.addEventListener('click', function (e) {
 
-        playRound(e.target.id);
+        if (document.getElementsByClassName('message').length == 1) {
+            container.removeChild(message);
+        }
 
-        //p.remove();
+        playRound(e.target.id);
 
         playerWins.textContent = 'Player has: ' + wins;
         compWins.textContent = 'Computer has: ' + losses;
@@ -116,8 +118,9 @@ btn.forEach((button) => {
             compWins.textContent = 'Computer has: ' + losses;
             nill.textContent = 'Draws: ' + draws;
 
-
         }
+
+        
 
 
     });
